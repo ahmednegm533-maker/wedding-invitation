@@ -2,10 +2,15 @@
 const cover = document.getElementById('cover');
 const openBtn = document.getElementById('open-btn');
 
-openBtn.addEventListener('click', () => {
-  cover.classList.add('hidden');
-});
+const music = document.getElementById("bg-music");
 
+openBtn.addEventListener("click", () => {
+    cover.classList.add("hidden");
+
+    music.play().catch(() => {
+        console.log("Music autoplay blocked");
+    });
+});
 // ---- Falling petals ----
 const petalLayer = document.getElementById('petal-layer');
 for (let i = 0; i < 14; i++) {
